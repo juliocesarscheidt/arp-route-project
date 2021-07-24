@@ -136,6 +136,14 @@ def main():
 
   route()
 
+  # [INFO] address_dec 10.10.10.1
+  # [INFO] dest_mask 255.255.255.0
+  # [INFO] address_bin 00001010000010100000101000000001
+  # [INFO] mask_bin 11111111111111111111111100000000
+  # [INFO] gateway_bin 00001010000010100000101000000000
+  # [INFO] gateway_dec 10.10.10.0
+  # [{'GATEWAY': '10.10.10.0', 'MAC_ADDRESS': '06:c5:6b:33:64:44'}]
+
 
 if __name__ in "__main__":
   main()
