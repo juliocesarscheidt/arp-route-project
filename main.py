@@ -1,3 +1,5 @@
+import pandas as pd
+
 from random import randrange
 
 # on memory tables
@@ -40,11 +42,9 @@ def address_dec_to_bin(address_dec):
   address_bin = ""
 
   for part in address_parts:
-    part = bin(int(part, 10))[2:]
-
-    if len(part) < 8:
-      missing_zeroes = 8 - len(part)
-      part = ("0" * missing_zeroes) + str(part)
+    part = str(bin(int(part, 10))[2:])
+    # fill leading zeroes
+    part = part.rjust(8, '0')
 
     address_bin = str(address_bin) + str(part)
 
@@ -116,6 +116,9 @@ def route():
 
     print(ARP_TABLE)
     print("---------------------------------------------------")
+
+  df = pd.DataFrame(data=ARP_TABLE)
+  print(df)
 
 
 def main():

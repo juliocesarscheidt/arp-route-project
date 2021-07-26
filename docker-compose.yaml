@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  app:
+    container_name: app
+    hostname: app
+    image: juliocesarmidia/arp-route-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: {}
+    networks:
+      - subnet_0
+    restart: on-failure
+    ports: []
+    volumes:
+      - ./:/usr/src/app:rw
+
+networks:
+  subnet_0:
+    driver: bridge
+
+volumes: {}
